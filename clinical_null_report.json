@@ -1,0 +1,930 @@
+{
+  "alpha": 0.05,
+  "n_source": 178,
+  "n_target": 179,
+  "features": [
+    "mean radius",
+    "mean texture",
+    "mean perimeter",
+    "mean area",
+    "mean concavity"
+  ],
+  "marginals": {
+    "features": [
+      {
+        "feature": "mean radius",
+        "ks_statistic": 0.07363002950222836,
+        "ks_p": 0.6844966590381258,
+        "wasserstein_normalized": {
+          "value": 0.16246596185622086,
+          "lower": 0.10661513997901186,
+          "upper": 0.38149519698641193,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_shift_in_source_sd": {
+          "0.05": -0.12957700112739526,
+          "0.1": -0.0906430665163478,
+          "0.25": -0.20835738444193985,
+          "0.5": -0.060834272829763045,
+          "0.75": -0.16425253664036055,
+          "0.9": -0.32120496054115033,
+          "0.95": -0.2174825253664036
+        },
+        "outside_source_range_frac": 0.0223463687150838,
+        "ks_p_adjusted": 1.0,
+        "detected": false
+      },
+      {
+        "feature": "mean texture",
+        "ks_statistic": 0.054202498273805785,
+        "ks_p": 0.9348060765722138,
+        "wasserstein_normalized": {
+          "value": 0.08954079722815342,
+          "lower": 0.09954796606991989,
+          "upper": 0.3171800603303617,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_shift_in_source_sd": {
+          "0.05": -0.08137283422459896,
+          "0.1": -0.03953219251336861,
+          "0.25": 0.07574598930481316,
+          "0.5": 0.05049732620320877,
+          "0.75": 0.09017379679144387,
+          "0.9": 0.437451122994653,
+          "0.95": -0.0018756149732679127
+        },
+        "outside_source_range_frac": 0.0111731843575419,
+        "ks_p_adjusted": 1.0,
+        "detected": false
+      },
+      {
+        "feature": "mean perimeter",
+        "ks_statistic": 0.07372418555018517,
+        "ks_p": 0.6830389914958429,
+        "wasserstein_normalized": {
+          "value": 0.15194831470356013,
+          "lower": 0.09926967890246155,
+          "upper": 0.3727574180680006,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_shift_in_source_sd": {
+          "0.05": -0.07919739717223703,
+          "0.1": -0.16628419023136237,
+          "0.25": -0.14955173521850848,
+          "0.5": -0.01994023136246944,
+          "0.75": -0.12571015424164547,
+          "0.9": -0.4422396529562956,
+          "0.95": -0.2565787596401033
+        },
+        "outside_source_range_frac": 0.0111731843575419,
+        "ks_p_adjusted": 1.0,
+        "detected": false
+      },
+      {
+        "feature": "mean area",
+        "ks_statistic": 0.07369280020086623,
+        "ks_p": 0.6835372926586185,
+        "wasserstein_normalized": {
+          "value": 0.16639946230737554,
+          "lower": 0.10537157283464502,
+          "upper": 0.3548903299696485,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_shift_in_source_sd": {
+          "0.05": 0.012919330199764939,
+          "0.1": -0.06285293772032904,
+          "0.25": -0.18566583431257344,
+          "0.5": -0.09669682726204405,
+          "0.75": -0.1396952115158645,
+          "0.9": -0.3771968860164522,
+          "0.95": -0.2378187132784957
+        },
+        "outside_source_range_frac": 0.0223463687150838,
+        "ks_p_adjusted": 1.0,
+        "detected": false
+      },
+      {
+        "feature": "mean concavity",
+        "ks_statistic": 0.10536061766367459,
+        "ks_p": 0.2412926364508311,
+        "wasserstein_normalized": {
+          "value": 0.21960501447526246,
+          "lower": 0.1438833072075456,
+          "upper": 0.5526674167392897,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_shift_in_source_sd": {
+          "0.05": -0.042303351698806224,
+          "0.1": -0.03801196379378192,
+          "0.25": -0.031499672045126534,
+          "0.5": 0.12210547028728852,
+          "0.75": 0.2581911321002231,
+          "0.9": 0.35615865144956205,
+          "0.95": 0.3567603305785121
+        },
+        "outside_source_range_frac": 0.0111731843575419,
+        "ks_p_adjusted": 1.0,
+        "detected": false
+      }
+    ],
+    "multiplicity": "holm",
+    "any_detected": false
+  },
+  "transform_compatibility": {
+    "features": [
+      {
+        "feature": "mean radius",
+        "verdict": "inconclusive",
+        "tolerance": 0.1,
+        "noise_floor": 0.13778901792976797,
+        "nonlinearity_gap": {
+          "value": 0.15793497443101273,
+          "lower": 0.09026657627653471,
+          "upper": 0.36985509107817394,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_slope": {
+          "value": 0.9586825371684675,
+          "lower": 0.8089219730221887,
+          "upper": 1.1874409104717965,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_intercept": {
+          "value": 0.4065520943145877,
+          "lower": -2.4818818779160474,
+          "upper": 2.1265261511586235,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_curve": {
+          "p": [
+            0.1,
+            0.15000000000000002,
+            0.2,
+            0.25,
+            0.30000000000000004,
+            0.35,
+            0.4,
+            0.45000000000000007,
+            0.5,
+            0.55,
+            0.6,
+            0.65,
+            0.7000000000000001,
+            0.75,
+            0.8,
+            0.85,
+            0.9
+          ],
+          "source": [
+            9.829,
+            10.4855,
+            10.964,
+            11.227500000000001,
+            11.373999999999999,
+            11.616,
+            11.758,
+            11.9965,
+            12.26,
+            12.400500000000001,
+            12.728,
+            12.9405,
+            13.209000000000001,
+            13.445,
+            13.818,
+            14.26,
+            14.656
+          ],
+          "target": [
+            9.68,
+            10.127,
+            10.486,
+            10.885,
+            11.286,
+            11.513,
+            11.682,
+            11.904,
+            12.16,
+            12.338,
+            12.576,
+            12.824,
+            12.992,
+            13.175,
+            13.517999999999999,
+            13.743,
+            14.128
+          ],
+          "affine_fit": [
+            9.829442752143455,
+            10.458817837794554,
+            10.917547431829666,
+            11.170160280373558,
+            11.310607272068737,
+            11.542608446063506,
+            11.678741366341429,
+            11.907387151456108,
+            12.16,
+            12.294694896472171,
+            12.608663427394841,
+            12.812383466543142,
+            13.069789727772877,
+            13.296038806544633,
+            13.653627392908472,
+            14.077365074336935,
+            14.457003359055648
+          ],
+          "scale": 1.2510808614151636
+        }
+      },
+      {
+        "feature": "mean texture",
+        "verdict": "inconclusive",
+        "tolerance": 0.1,
+        "noise_floor": 0.14715462799384157,
+        "nonlinearity_gap": {
+          "value": 0.11868417233737479,
+          "lower": 0.09676053691495463,
+          "upper": 0.3059701909209064,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_slope": {
+          "value": 1.0804933900660818,
+          "lower": 0.8595526612882803,
+          "upper": 1.297962021039193,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_intercept": {
+          "value": -1.2179381150935455,
+          "lower": -5.081640858421847,
+          "upper": 2.340952715859896,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_curve": {
+          "p": [
+            0.1,
+            0.15000000000000002,
+            0.2,
+            0.25,
+            0.30000000000000004,
+            0.35,
+            0.4,
+            0.45000000000000007,
+            0.5,
+            0.55,
+            0.6,
+            0.65,
+            0.7000000000000001,
+            0.75,
+            0.8,
+            0.85,
+            0.9
+          ],
+          "source": [
+            13.354999999999999,
+            14.198500000000001,
+            14.704,
+            14.9625,
+            15.821,
+            16.169500000000003,
+            16.47,
+            16.908,
+            17.305,
+            17.6635,
+            18.29,
+            18.751,
+            19.119,
+            19.6375,
+            20.166,
+            21.3205,
+            22.286
+          ],
+          "target": [
+            13.218,
+            13.98,
+            14.794,
+            15.225000000000001,
+            15.546,
+            15.825999999999999,
+            16.556,
+            17.012,
+            17.48,
+            17.928,
+            18.22,
+            18.597,
+            19.04,
+            19.95,
+            20.768,
+            21.686,
+            23.802000000000003
+          ],
+          "affine_fit": [
+            13.212051109238976,
+            14.123447283759718,
+            14.669636692438122,
+            14.948944233770202,
+            15.876547809141936,
+            16.253099755579967,
+            16.57778801929482,
+            17.05104412414377,
+            17.48,
+            17.86735688033869,
+            18.54428598921509,
+            19.042393442035557,
+            19.440015009579874,
+            20.000250832329137,
+            20.57129158897906,
+            21.818721207810352,
+            22.861937575919153
+          ],
+          "scale": 2.753654240230695
+        }
+      },
+      {
+        "feature": "mean perimeter",
+        "verdict": "inconclusive",
+        "tolerance": 0.1,
+        "noise_floor": 0.14345829874925234,
+        "nonlinearity_gap": {
+          "value": 0.22622550978038392,
+          "lower": 0.10663049627753633,
+          "upper": 0.4460538714072559,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_slope": {
+          "value": 1.0230090065254984,
+          "lower": 0.8124962256477869,
+          "upper": 1.2605600618888226,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_intercept": {
+          "value": -2.0316052109465517,
+          "lower": -19.60504069757619,
+          "upper": 14.510443472322065,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_curve": {
+          "p": [
+            0.1,
+            0.15000000000000002,
+            0.2,
+            0.25,
+            0.30000000000000004,
+            0.35,
+            0.4,
+            0.45000000000000007,
+            0.5,
+            0.55,
+            0.6,
+            0.65,
+            0.7000000000000001,
+            0.75,
+            0.8,
+            0.85,
+            0.9
+          ],
+          "source": [
+            62.976,
+            67.1445,
+            70.434,
+            71.55,
+            73.536,
+            74.22749999999999,
+            75.82000000000001,
+            76.915,
+            78.30000000000001,
+            80.053,
+            81.354,
+            82.836,
+            84.27,
+            87.11,
+            88.556,
+            91.292,
+            95.831
+          ],
+          "target": [
+            61.058,
+            64.585,
+            66.798,
+            69.825,
+            71.776,
+            73.527,
+            75.188,
+            76.67699999999999,
+            78.07,
+            78.931,
+            81.446,
+            82.507,
+            83.852,
+            85.66,
+            87.22399999999999,
+            88.464,
+            90.73000000000003
+          ],
+          "affine_fit": [
+            62.39340998400324,
+            66.65782302770477,
+            70.0230111546704,
+            71.16468920595285,
+            73.19638509291251,
+            73.90379582092487,
+            75.53293766381675,
+            76.65313252596216,
+            78.07,
+            79.86333478843918,
+            81.19426950592884,
+            82.71036885359963,
+            84.17736376895719,
+            87.08270934748961,
+            88.56198037092548,
+            91.36093301277926,
+            96.00437089339849
+          ],
+          "scale": 8.418501732826666
+        }
+      },
+      {
+        "feature": "mean area",
+        "verdict": "inconclusive",
+        "tolerance": 0.1,
+        "noise_floor": 0.1418752431322735,
+        "nonlinearity_gap": {
+          "value": 0.1348508642540054,
+          "lower": 0.08338022688011675,
+          "upper": 0.40023737986147107,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_slope": {
+          "value": 0.9256636418112844,
+          "lower": 0.7916368114349662,
+          "upper": 1.1755599267437369,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_intercept": {
+          "value": 22.240034748832045,
+          "lower": -87.83870687568609,
+          "upper": 91.70527229562587,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_curve": {
+          "p": [
+            0.1,
+            0.15000000000000002,
+            0.2,
+            0.25,
+            0.30000000000000004,
+            0.35,
+            0.4,
+            0.45000000000000007,
+            0.5,
+            0.55,
+            0.6,
+            0.65,
+            0.7000000000000001,
+            0.75,
+            0.8,
+            0.85,
+            0.9
+          ],
+          "source": [
+            294.11,
+            333.93,
+            368.68,
+            386.075,
+            396.74,
+            409.08500000000004,
+            427.18,
+            442.63,
+            463.29999999999995,
+            469.87000000000006,
+            501.54,
+            514.31,
+            537.84,
+            556.2750000000001,
+            583.9599999999999,
+            631.115,
+            664.4700000000001
+          ],
+          "target": [
+            286.18,
+            311.43,
+            334.26,
+            362.65,
+            391.52,
+            404.34,
+            417.72,
+            433.28000000000003,
+            451.1,
+            468.43,
+            485.76,
+            507.25,
+            516.32,
+            538.65,
+            561.12,
+            585.27,
+            616.88
+          ],
+          "affine_fit": [
+            294.4869684419489,
+            331.34689465887425,
+            363.5137062118164,
+            379.6156252611236,
+            389.487828001041,
+            400.91514565920136,
+            417.6650292577765,
+            431.96653252376086,
+            451.1,
+            457.18161012670026,
+            486.49737766286364,
+            498.31810236879363,
+            520.0989678606132,
+            537.1635770974043,
+            562.7905750209496,
+            606.4402440505608,
+            637.3157548231762
+          ],
+          "scale": 93.78033331650627
+        }
+      },
+      {
+        "feature": "mean concavity",
+        "verdict": "inconclusive",
+        "tolerance": 0.1,
+        "noise_floor": 0.16249436653728,
+        "nonlinearity_gap": {
+          "value": 0.08978123792162064,
+          "lower": 0.07337050282158657,
+          "upper": 0.3145877547103841,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_slope": {
+          "value": 1.2009424207214088,
+          "lower": 0.9739959816710019,
+          "upper": 1.5544413864198008,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_intercept": {
+          "value": -0.003671399390366724,
+          "lower": -0.01751050484944794,
+          "upper": 0.0054416967219405345,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_curve": {
+          "p": [
+            0.1,
+            0.15000000000000002,
+            0.2,
+            0.25,
+            0.30000000000000004,
+            0.35,
+            0.4,
+            0.45000000000000007,
+            0.5,
+            0.55,
+            0.6,
+            0.65,
+            0.7000000000000001,
+            0.75,
+            0.8,
+            0.85,
+            0.9
+          ],
+          "source": [
+            0.008140999999999999,
+            0.0135575,
+            0.017724,
+            0.02073,
+            0.023702000000000004,
+            0.026676999999999996,
+            0.02964,
+            0.032851500000000006,
+            0.03544,
+            0.038154,
+            0.041104,
+            0.0455015,
+            0.052801,
+            0.058845,
+            0.061706,
+            0.06776149999999999,
+            0.08669300000000002
+          ],
+          "target": [
+            0.007067,
+            0.012605000000000002,
+            0.01615,
+            0.01984,
+            0.023634,
+            0.026173,
+            0.02996,
+            0.035154000000000005,
+            0.03889,
+            0.042760000000000006,
+            0.045573999999999996,
+            0.049101,
+            0.05754,
+            0.06614,
+            0.07237,
+            0.084298,
+            0.09675600000000006
+          ],
+          "affine_fit": [
+            0.0061054728567262635,
+            0.012610377478563774,
+            0.017614104074499527,
+            0.021224136991188077,
+            0.024793337865572113,
+            0.02836614156721829,
+            0.03192453395981583,
+            0.035781360543962644,
+            0.03889,
+            0.042149357729837904,
+            0.045692137870966064,
+            0.05097328216608846,
+            0.05973956136614438,
+            0.06699805735698458,
+            0.07043395362266852,
+            0.07770626045134701,
+            0.10044190188923438
+          ],
+          "scale": 0.024999719001881016
+        }
+      }
+    ],
+    "tolerance": 0.1
+  },
+  "dependence": {
+    "applicable": true,
+    "copula_cvm_statistic": 0.00014796808345595867,
+    "copula_p": 0.9368770764119602,
+    "detected": false,
+    "n_perm": 300,
+    "n_grid": 256,
+    "pairs": [
+      {
+        "pair": [
+          "mean radius",
+          "mean texture"
+        ],
+        "spearman_source": 0.08743972865680136,
+        "spearman_target": -0.13949158801878955,
+        "difference": -0.2269313166755909,
+        "p_adjusted": 0.09302325581395349,
+        "detected": false
+      },
+      {
+        "pair": [
+          "mean radius",
+          "mean perimeter"
+        ],
+        "spearman_source": 0.9972832765517695,
+        "spearman_target": 0.996202319145418,
+        "difference": -0.0010809574063515015,
+        "p_adjusted": 1.0,
+        "detected": false
+      },
+      {
+        "pair": [
+          "mean radius",
+          "mean area"
+        ],
+        "spearman_source": 0.9989600184509773,
+        "spearman_target": 0.9990783029660742,
+        "difference": 0.00011828451509698912,
+        "p_adjusted": 1.0,
+        "detected": false
+      },
+      {
+        "pair": [
+          "mean radius",
+          "mean concavity"
+        ],
+        "spearman_source": 0.20437222712998016,
+        "spearman_target": 0.2511461532217369,
+        "difference": 0.046773926091756735,
+        "p_adjusted": 0.9601328903654485,
+        "detected": false
+      },
+      {
+        "pair": [
+          "mean texture",
+          "mean perimeter"
+        ],
+        "spearman_source": 0.09073262540195867,
+        "spearman_target": -0.1397454722208717,
+        "difference": -0.23047809762283036,
+        "p_adjusted": 0.09302325581395349,
+        "detected": false
+      },
+      {
+        "pair": [
+          "mean texture",
+          "mean area"
+        ],
+        "spearman_source": 0.09569937947121268,
+        "spearman_target": -0.14069032978912366,
+        "difference": -0.23638970926033634,
+        "p_adjusted": 0.07973421926910298,
+        "detected": false
+      },
+      {
+        "pair": [
+          "mean texture",
+          "mean concavity"
+        ],
+        "spearman_source": 0.04727783026592424,
+        "spearman_target": -0.02198977201752551,
+        "difference": -0.06926760228344975,
+        "p_adjusted": 0.8770764119601329,
+        "detected": false
+      },
+      {
+        "pair": [
+          "mean perimeter",
+          "mean area"
+        ],
+        "spearman_source": 0.9955161339927379,
+        "spearman_target": 0.9941110314854447,
+        "difference": -0.0014051025072931989,
+        "p_adjusted": 1.0,
+        "detected": false
+      },
+      {
+        "pair": [
+          "mean perimeter",
+          "mean concavity"
+        ],
+        "spearman_source": 0.24834798892527615,
+        "spearman_target": 0.30656439476347014,
+        "difference": 0.058216405838193985,
+        "p_adjusted": 0.920265780730897,
+        "detected": false
+      },
+      {
+        "pair": [
+          "mean area",
+          "mean concavity"
+        ],
+        "spearman_source": 0.19342037299200932,
+        "spearman_target": 0.24165358466233236,
+        "difference": 0.048233211670323045,
+        "p_adjusted": 0.9568106312292359,
+        "detected": false
+      }
+    ],
+    "spearman_difference_matrix": [
+      [
+        0.0,
+        -0.2269313166755909,
+        -0.0010809574063515015,
+        0.00011828451509698912,
+        0.046773926091756735
+      ],
+      [
+        -0.2269313166755909,
+        0.0,
+        -0.23047809762283036,
+        -0.23638970926033634,
+        -0.06926760228344975
+      ],
+      [
+        -0.0010809574063516125,
+        -0.2304780976228304,
+        0.0,
+        -0.0014051025072931989,
+        0.058216405838193985
+      ],
+      [
+        0.00011828451509721116,
+        -0.23638970926033634,
+        -0.0014051025072930878,
+        0.0,
+        0.048233211670323045
+      ],
+      [
+        0.04677392609175679,
+        -0.06926760228344975,
+        0.058216405838193985,
+        0.048233211670323045,
+        0.0
+      ]
+    ],
+    "features": [
+      "mean radius",
+      "mean texture",
+      "mean perimeter",
+      "mean area",
+      "mean concavity"
+    ]
+  },
+  "decomposition": {
+    "applicable": true,
+    "unit": "squared energy distance, features standardized by source robust scale",
+    "verdict": "not_detected",
+    "total_p": 0.39867109634551495,
+    "total": {
+      "value": 0.017478226867442492,
+      "lower": 0.027432829843220895,
+      "upper": 0.18507965127954917,
+      "method": "percentile bootstrap within cross-fit halves",
+      "n_resamples": 300
+    },
+    "marginal": {
+      "value": -0.016381768806599473,
+      "lower": 0.0029081901374646687,
+      "upper": 0.13666981221265206,
+      "method": "percentile bootstrap within cross-fit halves",
+      "n_resamples": 300
+    },
+    "dependence": {
+      "value": 0.002707341163155519,
+      "lower": 0.017023681936302652,
+      "upper": 0.15940320031091068,
+      "method": "percentile bootstrap within cross-fit halves",
+      "n_resamples": 300
+    },
+    "interaction": {
+      "value": 0.031152654510886446,
+      "lower": -0.148754266956833,
+      "upper": 0.011582347641948612,
+      "method": "percentile bootstrap within cross-fit halves",
+      "n_resamples": 300
+    },
+    "marginal_share": {
+      "value": 0.0,
+      "lower": 0.07160313914794741,
+      "upper": 0.8014371909777349,
+      "method": "percentile bootstrap within cross-fit halves",
+      "n_resamples": 300
+    },
+    "subsampled_to": null,
+    "n_perm": 300
+  },
+  "equivalence": {
+    "interval": "conservative",
+    "n_boot": 500,
+    "marginal": {
+      "delta": 0.1,
+      "unit": "source robust SD",
+      "max_wasserstein_estimate": 0.21960501447526246,
+      "upper_bounds_all": {
+        "conservative": 0.5197927657081077,
+        "tost": 0.4702545988455286,
+        "basic": 0.2869809951091188
+      },
+      "smallest_certifiable_delta": 0.5197927657081077,
+      "equivalent": false
+    },
+    "dependence": {
+      "applicable": true,
+      "delta": 0.1,
+      "unit": "Spearman",
+      "max_abs_spearman_diff_estimate": 0.23638970926033634,
+      "upper_bounds_all": {
+        "conservative": 0.4606372670558558,
+        "tost": 0.42057430130096224,
+        "basic": 0.3616370738049951
+      },
+      "smallest_certifiable_delta": 0.4606372670558558,
+      "equivalent": false
+    }
+  },
+  "power": null,
+  "notes": [
+    "feature 'mean radius' has 8% tied values in source; continuous-data methods may be unreliable",
+    "feature 'mean radius' has 11% tied values in target; continuous-data methods may be unreliable",
+    "feature 'mean texture' has 6% tied values in source; continuous-data methods may be unreliable",
+    "feature 'mean texture' has 9% tied values in target; continuous-data methods may be unreliable"
+  ],
+  "limitations": [
+    "Diagnostics concern the feature distribution P(X); they cannot establish whether P(Y|X) is stable.",
+    "Compatibility with an affine/monotone quantile map does not identify the process that generated the target.",
+    "'inconclusive' means the data cannot tell 'no shift' from 'small shift'; only 'equivalent_within_tolerance' supports 'negligible'.",
+    "Decomposition shares depend on the chosen distance (energy) and on counterfactual constructions from empirical quantile maps.",
+    "Assumes independent, continuous observations; temporal dependence needs block-based inference (not in v0.1)."
+  ],
+  "profile": {
+    "marginal_difference": "inconclusive",
+    "marginal_form": "inconclusive",
+    "dependence_difference": "inconclusive",
+    "shift_attribution": "not_detected",
+    "outcome_mechanism": "not_assessable_from_features"
+  }
+}

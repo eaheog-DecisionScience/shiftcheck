@@ -1,0 +1,757 @@
+{
+  "alpha": 0.05,
+  "n_source": 50,
+  "n_target": 50,
+  "features": [
+    "sepal length (cm)",
+    "sepal width (cm)",
+    "petal length (cm)",
+    "petal width (cm)"
+  ],
+  "marginals": {
+    "features": [
+      {
+        "feature": "sepal length (cm)",
+        "ks_statistic": 0.46,
+        "ks_p": 3.800827929128319e-05,
+        "wasserstein_normalized": {
+          "value": 1.2564971428571425,
+          "lower": 0.8207701428571428,
+          "upper": 1.6711219285714283,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_shift_in_source_sd": {
+          "0.05": 1.349,
+          "0.1": 0.809399999999998,
+          "0.25": 1.2044642857142855,
+          "0.5": 1.1562857142857133,
+          "0.75": 1.156285714285715,
+          "0.9": 1.7536999999999983,
+          "0.95": 1.82115
+        },
+        "outside_source_range_frac": 0.24,
+        "ks_p_adjusted": 7.601655858256638e-05,
+        "detected": true
+      },
+      {
+        "feature": "sepal width (cm)",
+        "ks_statistic": 0.26,
+        "ks_p": 0.06779471096995852,
+        "wasserstein_normalized": {
+          "value": 0.5793599999999999,
+          "lower": 0.2666759999999999,
+          "upper": 0.9087999999999997,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_shift_in_source_sd": {
+          "0.05": 0.7241999999999995,
+          "0.1": 0.8236000000000011,
+          "0.25": 0.7809999999999996,
+          "0.5": 0.5680000000000004,
+          "0.75": 0.4970000000000006,
+          "0.9": 0.5679999999999991,
+          "0.95": 0.8803999999999974
+        },
+        "outside_source_range_frac": 0.06,
+        "ks_p_adjusted": 0.06779471096995852,
+        "detected": false
+      },
+      {
+        "feature": "petal length (cm)",
+        "ks_statistic": 0.86,
+        "ks_p": 3.173227767377155e-19,
+        "wasserstein_normalized": {
+          "value": 2.904846666666668,
+          "lower": 2.443825916666668,
+          "upper": 3.3568740833333357,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_shift_in_source_sd": {
+          "0.05": 3.2713250000000014,
+          "0.1": 2.9453166666666686,
+          "0.25": 2.473166666666667,
+          "0.5": 2.698000000000002,
+          "0.75": 2.8666250000000026,
+          "0.9": 3.394983333333335,
+          "0.95": 3.945825
+        },
+        "outside_source_range_frac": 0.68,
+        "ks_p_adjusted": 9.519683302131465e-19,
+        "detected": true
+      },
+      {
+        "feature": "petal width (cm)",
+        "ks_statistic": 0.88,
+        "ks_p": 2.3630419544297964e-20,
+        "wasserstein_normalized": {
+          "value": 3.147666666666666,
+          "lower": 2.742067333333333,
+          "upper": 3.570353333333333,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_shift_in_source_sd": {
+          "0.05": 2.4506833333333335,
+          "0.1": 3.5523666666666665,
+          "0.25": 2.698,
+          "0.5": 3.147666666666666,
+          "0.75": 3.597333333333332,
+          "0.9": 4.0020333333333316,
+          "0.95": 3.8446499999999975
+        },
+        "outside_source_range_frac": 0.68,
+        "ks_p_adjusted": 9.452167817719186e-20,
+        "detected": true
+      }
+    ],
+    "multiplicity": "holm",
+    "applicable": true,
+    "any_detected": true
+  },
+  "transform_compatibility": {
+    "features": [
+      {
+        "feature": "sepal length (cm)",
+        "verdict": "inconclusive",
+        "tolerance": 0.1,
+        "noise_floor": 0.3171816813502445,
+        "nonlinearity_gap": {
+          "value": 0.18701614725794422,
+          "lower": 0.18765628821008634,
+          "upper": 0.6468668612986986,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_slope": {
+          "value": 1.1666666666666676,
+          "lower": 0.7743461381608724,
+          "upper": 1.7529166666666662,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_intercept": {
+          "value": -0.3833333333333391,
+          "lower": -3.7700687031569506,
+          "upper": 1.8499687087801717,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_curve": {
+          "p": [
+            0.1,
+            0.15000000000000002,
+            0.2,
+            0.25,
+            0.30000000000000004,
+            0.35,
+            0.4,
+            0.45000000000000007,
+            0.5,
+            0.55,
+            0.6,
+            0.65,
+            0.7000000000000001,
+            0.75,
+            0.8,
+            0.85,
+            0.9
+          ],
+          "source": [
+            5.380000000000001,
+            5.5,
+            5.5,
+            5.6,
+            5.6,
+            5.7,
+            5.7,
+            5.8,
+            5.9,
+            6.0,
+            6.04,
+            6.1,
+            6.2,
+            6.3,
+            6.4,
+            6.5649999999999995,
+            6.7
+          ],
+          "target": [
+            5.8,
+            6.0,
+            6.1,
+            6.225,
+            6.3,
+            6.3,
+            6.4,
+            6.4,
+            6.5,
+            6.5,
+            6.7,
+            6.7,
+            6.83,
+            6.9,
+            7.2,
+            7.265,
+            7.609999999999999
+          ],
+          "affine_fit": [
+            5.8933333333333335,
+            6.033333333333333,
+            6.033333333333333,
+            6.1499999999999995,
+            6.1499999999999995,
+            6.266666666666667,
+            6.266666666666667,
+            6.383333333333333,
+            6.5,
+            6.616666666666666,
+            6.663333333333333,
+            6.733333333333333,
+            6.8500000000000005,
+            6.966666666666667,
+            7.083333333333334,
+            7.275833333333333,
+            7.4333333333333345
+          ],
+          "scale": 0.46290996979802485
+        }
+      },
+      {
+        "feature": "sepal width (cm)",
+        "verdict": "inconclusive",
+        "tolerance": 0.1,
+        "noise_floor": 0.3109576833839266,
+        "nonlinearity_gap": {
+          "value": 0.2695582576068178,
+          "lower": 0.20956272761239067,
+          "upper": 0.6972780750293115,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_slope": {
+          "value": 0.8750000000000006,
+          "lower": 0.5925000000000002,
+          "upper": 1.3333333333333346,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_intercept": {
+          "value": 0.5499999999999985,
+          "lower": -0.7182499999999974,
+          "upper": 1.3369696969696938,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_curve": {
+          "p": [
+            0.1,
+            0.15000000000000002,
+            0.2,
+            0.25,
+            0.30000000000000004,
+            0.35,
+            0.4,
+            0.45000000000000007,
+            0.5,
+            0.55,
+            0.6,
+            0.65,
+            0.7000000000000001,
+            0.75,
+            0.8,
+            0.85,
+            0.9
+          ],
+          "source": [
+            2.3,
+            2.4,
+            2.5,
+            2.525,
+            2.6,
+            2.7,
+            2.7,
+            2.8,
+            2.8,
+            2.895,
+            2.9,
+            2.9,
+            3.0,
+            3.0,
+            3.0,
+            3.065,
+            3.1100000000000003
+          ],
+          "target": [
+            2.5900000000000003,
+            2.7,
+            2.7,
+            2.8,
+            2.8,
+            2.8,
+            2.9,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.0,
+            3.1,
+            3.1750000000000003,
+            3.2,
+            3.2649999999999997,
+            3.31
+          ],
+          "affine_fit": [
+            2.5624999999999996,
+            2.65,
+            2.7375,
+            2.759375,
+            2.825,
+            2.9125,
+            2.9125,
+            3.0,
+            3.0,
+            3.083125,
+            3.0875,
+            3.0875,
+            3.1750000000000003,
+            3.1750000000000003,
+            3.1750000000000003,
+            3.231875,
+            3.2712500000000007
+          ],
+          "scale": 0.2028367165086583
+        }
+      },
+      {
+        "feature": "petal length (cm)",
+        "verdict": "inconclusive",
+        "tolerance": 0.1,
+        "noise_floor": 0.3096565389577578,
+        "nonlinearity_gap": {
+          "value": 0.2738726515540742,
+          "lower": 0.1864124395748406,
+          "upper": 0.7433094115987725,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_slope": {
+          "value": 1.249999999999999,
+          "lower": 0.8431547619047619,
+          "upper": 1.7925811688311668,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_intercept": {
+          "value": 0.11250000000000515,
+          "lower": -2.250636363636366,
+          "upper": 1.8111640625000012,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_curve": {
+          "p": [
+            0.1,
+            0.15000000000000002,
+            0.2,
+            0.25,
+            0.30000000000000004,
+            0.35,
+            0.4,
+            0.45000000000000007,
+            0.5,
+            0.55,
+            0.6,
+            0.65,
+            0.7000000000000001,
+            0.75,
+            0.8,
+            0.85,
+            0.9
+          ],
+          "source": [
+            3.5900000000000003,
+            3.835,
+            3.9,
+            4.0,
+            4.0,
+            4.1,
+            4.2,
+            4.205000000000001,
+            4.35,
+            4.4,
+            4.5,
+            4.5,
+            4.5,
+            4.6,
+            4.7,
+            4.7,
+            4.8
+          ],
+          "target": [
+            4.9,
+            5.0,
+            5.1,
+            5.1,
+            5.1,
+            5.215,
+            5.36,
+            5.5,
+            5.55,
+            5.6,
+            5.6,
+            5.7,
+            5.8,
+            5.875,
+            6.0,
+            6.1,
+            6.31
+          ],
+          "affine_fit": [
+            4.600000000000001,
+            4.906250000000001,
+            4.987500000000001,
+            5.112500000000001,
+            5.112500000000001,
+            5.2375,
+            5.362500000000001,
+            5.368750000000001,
+            5.55,
+            5.612500000000001,
+            5.7375,
+            5.7375,
+            5.7375,
+            5.8625,
+            5.9875,
+            5.9875,
+            6.1125
+          ],
+          "scale": 0.4017898967212421
+        }
+      },
+      {
+        "feature": "petal width (cm)",
+        "verdict": "inconclusive",
+        "tolerance": 0.1,
+        "noise_floor": 0.385600634300969,
+        "nonlinearity_gap": {
+          "value": 0.4395153420180751,
+          "lower": 0.2717913480105827,
+          "upper": 0.7666389249078746,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_slope": {
+          "value": 1.5000000000000007,
+          "lower": 0.9999999999999992,
+          "upper": 1.9999999999999962,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_intercept": {
+          "value": 0.049999999999999156,
+          "lower": -0.6575624999999995,
+          "upper": 0.7999999999999987,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_curve": {
+          "p": [
+            0.1,
+            0.15000000000000002,
+            0.2,
+            0.25,
+            0.30000000000000004,
+            0.35,
+            0.4,
+            0.45000000000000007,
+            0.5,
+            0.55,
+            0.6,
+            0.65,
+            0.7000000000000001,
+            0.75,
+            0.8,
+            0.85,
+            0.9
+          ],
+          "source": [
+            1.0,
+            1.1,
+            1.1800000000000002,
+            1.2,
+            1.2700000000000002,
+            1.3,
+            1.3,
+            1.3,
+            1.3,
+            1.3,
+            1.4,
+            1.4,
+            1.4300000000000004,
+            1.5,
+            1.5,
+            1.5,
+            1.5100000000000002
+          ],
+          "target": [
+            1.79,
+            1.8,
+            1.8,
+            1.8,
+            1.8,
+            1.9,
+            1.9,
+            2.0,
+            2.0,
+            2.095,
+            2.1,
+            2.1,
+            2.2,
+            2.3,
+            2.3,
+            2.3,
+            2.4
+          ],
+          "affine_fit": [
+            1.5499999999999998,
+            1.7,
+            1.8200000000000003,
+            1.8499999999999999,
+            1.9550000000000003,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.1500000000000004,
+            2.1500000000000004,
+            2.1950000000000003,
+            2.3,
+            2.3,
+            2.3,
+            2.3150000000000004
+          ],
+          "scale": 0.203353375078235
+        }
+      }
+    ],
+    "tolerance": 0.1
+  },
+  "dependence": {
+    "applicable": true,
+    "copula_cvm_statistic": 0.001940625,
+    "copula_p": 0.15946843853820597,
+    "detected": false,
+    "n_perm": 300,
+    "n_grid": 256,
+    "pairs": [
+      {
+        "pair": [
+          "sepal length (cm)",
+          "sepal width (cm)"
+        ],
+        "spearman_source": 0.5176060253966388,
+        "spearman_target": 0.426516535285076,
+        "difference": -0.09108949011156281,
+        "p_adjusted": 0.9368770764119602,
+        "detected": false
+      },
+      {
+        "pair": [
+          "sepal length (cm)",
+          "petal length (cm)"
+        ],
+        "spearman_source": 0.7366250971564231,
+        "spearman_target": 0.8243233745595462,
+        "difference": 0.08769827740312308,
+        "p_adjusted": 0.9401993355481728,
+        "detected": false
+      },
+      {
+        "pair": [
+          "sepal length (cm)",
+          "petal width (cm)"
+        ],
+        "spearman_source": 0.548679081677808,
+        "spearman_target": 0.31577205874198516,
+        "difference": -0.23290702293582283,
+        "p_adjusted": 0.30564784053156147,
+        "detected": false
+      },
+      {
+        "pair": [
+          "sepal width (cm)",
+          "petal length (cm)"
+        ],
+        "spearman_source": 0.5747271849206074,
+        "spearman_target": 0.38735866802200164,
+        "difference": -0.18736851689860573,
+        "p_adjusted": 0.5182724252491694,
+        "detected": false
+      },
+      {
+        "pair": [
+          "sepal width (cm)",
+          "petal width (cm)"
+        ],
+        "spearman_source": 0.6599825558991251,
+        "spearman_target": 0.5443097621118012,
+        "difference": -0.11567279378732398,
+        "p_adjusted": 0.8737541528239202,
+        "detected": false
+      },
+      {
+        "pair": [
+          "petal length (cm)",
+          "petal width (cm)"
+        ],
+        "spearman_source": 0.787009590533796,
+        "spearman_target": 0.3629133150909172,
+        "difference": -0.42409627544287887,
+        "p_adjusted": 0.019933554817275746,
+        "detected": true
+      }
+    ],
+    "spearman_difference_matrix": [
+      [
+        0.0,
+        -0.09108949011156281,
+        0.08769827740312308,
+        -0.23290702293582283
+      ],
+      [
+        -0.09108949011156287,
+        2.220446049250313e-16,
+        -0.18736851689860573,
+        -0.11567279378732398
+      ],
+      [
+        0.08769827740312319,
+        -0.18736851689860579,
+        0.0,
+        -0.42409627544287887
+      ],
+      [
+        -0.23290702293582283,
+        -0.11567279378732398,
+        -0.42409627544287887,
+        0.0
+      ]
+    ],
+    "features": [
+      "sepal length (cm)",
+      "sepal width (cm)",
+      "petal length (cm)",
+      "petal width (cm)"
+    ],
+    "categorical_pairs": []
+  },
+  "decomposition": {
+    "applicable": true,
+    "unit": "squared energy distance, features standardized by source robust scale",
+    "verdict": "marginal_dominated",
+    "total_p": 0.0033222591362126247,
+    "total": {
+      "value": 4.536608533063495,
+      "lower": 3.829986534212954,
+      "upper": 5.786388894126543,
+      "method": "percentile bootstrap within cross-fit halves",
+      "n_resamples": 300
+    },
+    "marginal": {
+      "value": 4.5273351454445585,
+      "lower": 3.8404388176176165,
+      "upper": 5.909669857721755,
+      "method": "percentile bootstrap within cross-fit halves",
+      "n_resamples": 300
+    },
+    "dependence": {
+      "value": -0.061561092402826145,
+      "lower": 0.015907944903846383,
+      "upper": 0.5027505585078224,
+      "method": "percentile bootstrap within cross-fit halves",
+      "n_resamples": 300
+    },
+    "interaction": {
+      "value": 0.07083448002176251,
+      "lower": -0.5489401800647927,
+      "upper": 0.004168857952019935,
+      "method": "percentile bootstrap within cross-fit halves",
+      "n_resamples": 300
+    },
+    "marginal_share": {
+      "value": 1.0,
+      "lower": 0.9097744568678898,
+      "upper": 0.9967892458279635,
+      "method": "percentile bootstrap within cross-fit halves",
+      "n_resamples": 300
+    },
+    "subsampled_to": null,
+    "n_perm": 300
+  },
+  "equivalence": {
+    "interval": "conservative",
+    "n_boot": 500,
+    "marginal": {
+      "delta": 0.1,
+      "unit": "source robust SD",
+      "max_wasserstein_estimate": 3.147666666666666,
+      "upper_bounds_all": {
+        "conservative": 3.5391014999999992,
+        "tost": 3.4718763333333325,
+        "basic": 3.4894133333333324
+      },
+      "smallest_certifiable_delta": 3.5391014999999992,
+      "equivalent": false
+    },
+    "dependence": {
+      "applicable": true,
+      "delta": 0.1,
+      "unit": "Spearman",
+      "max_abs_spearman_diff_estimate": 0.42409627544287887,
+      "upper_bounds_all": {
+        "conservative": 0.6942083921910169,
+        "tost": 0.6465177032164827,
+        "basic": 0.6066574024224656
+      },
+      "smallest_certifiable_delta": 0.6942083921910169,
+      "equivalent": false
+    }
+  },
+  "categorical_marginals": {
+    "features": [],
+    "applicable": false,
+    "any_detected": false
+  },
+  "paired": false,
+  "time_series": false,
+  "block_length": null,
+  "power": null,
+  "notes": [
+    "feature 'sepal length (cm)' has 58% tied values in source; continuous-data methods may be unreliable",
+    "feature 'sepal length (cm)' has 58% tied values in target; continuous-data methods may be unreliable",
+    "feature 'sepal width (cm)' has 72% tied values in source; continuous-data methods may be unreliable",
+    "feature 'sepal width (cm)' has 74% tied values in target; continuous-data methods may be unreliable",
+    "feature 'petal length (cm)' has 62% tied values in source; continuous-data methods may be unreliable",
+    "feature 'petal length (cm)' has 60% tied values in target; continuous-data methods may be unreliable",
+    "feature 'petal width (cm)' has 82% tied values in source; continuous-data methods may be unreliable",
+    "feature 'petal width (cm)' has 76% tied values in target; continuous-data methods may be unreliable"
+  ],
+  "limitations": [
+    "Diagnostics concern the feature distribution P(X); they cannot establish whether P(Y|X) is stable.",
+    "Compatibility with an affine/monotone quantile map does not identify the process that generated the target.",
+    "'inconclusive' means the data cannot tell 'no shift' from 'small shift'; only 'equivalent_within_tolerance' supports 'negligible'.",
+    "Decomposition shares depend on the chosen distance (energy) and on counterfactual constructions from empirical quantile maps.",
+    "Assumes exchangeable observations unless time_series or paired mode is explicitly specified."
+  ],
+  "profile": {
+    "marginal_difference": "detected",
+    "marginal_form": "inconclusive",
+    "dependence_difference": "inconclusive",
+    "shift_attribution": "marginal_dominated",
+    "outcome_mechanism": "not_assessable_from_features"
+  }
+}

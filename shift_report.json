@@ -1,0 +1,654 @@
+{
+  "alpha": 0.05,
+  "n_source": 1500,
+  "n_target": 1500,
+  "features": [
+    "a",
+    "b",
+    "c"
+  ],
+  "marginals": {
+    "features": [
+      {
+        "feature": "a",
+        "ks_statistic": 0.4493333333333333,
+        "ks_p": 9.908500077842632e-137,
+        "wasserstein_normalized": {
+          "value": 3.7912695631351307,
+          "lower": 3.4630349062480312,
+          "upper": 4.112135339934197,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_shift_in_source_sd": {
+          "0.05": 0.02978098128871538,
+          "0.1": 0.2063759844280985,
+          "0.25": 0.7013228113545557,
+          "0.5": 2.1209281737293244,
+          "0.75": 4.850575978470617,
+          "0.9": 9.260118397566107,
+          "0.95": 12.814850921171532
+        },
+        "outside_source_range_frac": 0.24466666666666667,
+        "ks_p_adjusted": 1.9817000155685264e-136,
+        "detected": true
+      },
+      {
+        "feature": "b",
+        "ks_statistic": 0.458,
+        "ks_p": 2.971760987766366e-142,
+        "wasserstein_normalized": {
+          "value": 3.765209848911099,
+          "lower": 3.4870696299889974,
+          "upper": 4.07752100408225,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_shift_in_source_sd": {
+          "0.05": -0.0013639561624413838,
+          "0.1": 0.09006700249334171,
+          "0.25": 0.6689952711794682,
+          "0.5": 2.0916825211346266,
+          "0.75": 4.953823512350719,
+          "0.9": 9.159590335245065,
+          "0.95": 13.189536009841653
+        },
+        "outside_source_range_frac": 0.234,
+        "ks_p_adjusted": 8.915282963299099e-142,
+        "detected": true
+      },
+      {
+        "feature": "c",
+        "ks_statistic": 0.44866666666666666,
+        "ks_p": 2.6047254134498045e-136,
+        "wasserstein_normalized": {
+          "value": 3.9799955717773634,
+          "lower": 3.6670215495195535,
+          "upper": 4.2787386845842486,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_shift_in_source_sd": {
+          "0.05": -0.004630726861767101,
+          "0.1": 0.19694475336585343,
+          "0.25": 0.7736325242083011,
+          "0.5": 2.0575797276626004,
+          "0.75": 5.193380830468625,
+          "0.9": 9.587087142114806,
+          "0.95": 14.32982777351632
+        },
+        "outside_source_range_frac": 0.216,
+        "ks_p_adjusted": 2.6047254134498045e-136,
+        "detected": true
+      }
+    ],
+    "multiplicity": "holm",
+    "any_detected": true
+  },
+  "transform_compatibility": {
+    "features": [
+      {
+        "feature": "a",
+        "verdict": "nonlinear_monotone",
+        "tolerance": 0.1,
+        "noise_floor": 0.04807735207087287,
+        "nonlinearity_gap": {
+          "value": 0.23148734493980216,
+          "lower": 0.16036290547766993,
+          "upper": 0.3191227057020161,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_slope": {
+          "value": 4.07535349642767,
+          "lower": 3.70398939670062,
+          "upper": 4.539643867083403,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_intercept": {
+          "value": -4.968580213117395,
+          "lower": -6.197306140549163,
+          "upper": -4.189005372353748,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_curve": {
+          "p": [
+            0.1,
+            0.15000000000000002,
+            0.2,
+            0.25,
+            0.30000000000000004,
+            0.35,
+            0.4,
+            0.45000000000000007,
+            0.5,
+            0.55,
+            0.6,
+            0.65,
+            0.7000000000000001,
+            0.75,
+            0.8,
+            0.85,
+            0.9
+          ],
+          "source": [
+            1.1353336137012298,
+            1.352007457293055,
+            1.60915825311079,
+            1.817111883446901,
+            2.0017001163347694,
+            2.2100237156569964,
+            2.388191884239421,
+            2.5575068487203816,
+            2.741040407383709,
+            2.9859864258349367,
+            3.2287609144036997,
+            3.4577868040672155,
+            3.700165870003398,
+            4.018510192487787,
+            4.3517056094342,
+            4.743088857251739,
+            5.421139356993762
+          ],
+          "target": [
+            1.4721132602146947,
+            1.8929211234521466,
+            2.3884244279139515,
+            2.961582492051585,
+            3.5207627745306604,
+            4.091714924672222,
+            4.712812989448259,
+            5.402755851845553,
+            6.20212839496333,
+            7.136817988813365,
+            7.995593899098155,
+            9.164613328385343,
+            10.328102144243099,
+            11.934040034503765,
+            14.35311824198828,
+            16.70008212071237,
+            20.53248774981839
+          ],
+          "affine_fit": [
+            -0.3416944009082261,
+            0.5413281051581409,
+            1.5893085000031046,
+            2.436793054488203,
+            3.1890553547871825,
+            4.038047663673417,
+            4.764145932457916,
+            5.454164264952924,
+            6.20212839496333,
+            7.200370007694577,
+            8.189761868526725,
+            9.123123328739391,
+            10.110903702563284,
+            11.408269350267936,
+            12.766158457714177,
+            14.361183545150602,
+            17.124479020028783
+          ],
+          "scale": 5.354631334866929
+        }
+      },
+      {
+        "feature": "b",
+        "verdict": "nonlinear_monotone",
+        "tolerance": 0.1,
+        "noise_floor": 0.04826837282487714,
+        "nonlinearity_gap": {
+          "value": 0.25254641518690607,
+          "lower": 0.16830792759262136,
+          "upper": 0.33016305686283764,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_slope": {
+          "value": 3.98160896877377,
+          "lower": 3.5706513434053995,
+          "upper": 4.404749315922628,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_intercept": {
+          "value": -4.866451768773787,
+          "lower": -5.885980322852996,
+          "upper": -3.7327770724985725,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_curve": {
+          "p": [
+            0.1,
+            0.15000000000000002,
+            0.2,
+            0.25,
+            0.30000000000000004,
+            0.35,
+            0.4,
+            0.45000000000000007,
+            0.5,
+            0.55,
+            0.6,
+            0.65,
+            0.7000000000000001,
+            0.75,
+            0.8,
+            0.85,
+            0.9
+          ],
+          "source": [
+            1.1563707847951363,
+            1.3925033441722092,
+            1.586168164221514,
+            1.7567506911594806,
+            1.97060066721213,
+            2.17365602093899,
+            2.3599642232252043,
+            2.5529333659358135,
+            2.7961412573012976,
+            3.0142324038475086,
+            3.2384329384845985,
+            3.479620386274989,
+            3.721812632223169,
+            3.9950298349831366,
+            4.413387668347064,
+            4.867671564485447,
+            5.374531998878563
+          ],
+          "target": [
+            1.3058111800713113,
+            1.8002986124631382,
+            2.3882272652184553,
+            2.866756742158483,
+            3.5316097251905894,
+            4.135632493307296,
+            4.679323002257789,
+            5.459318843308282,
+            6.266689339255425,
+            7.0856984795174665,
+            7.920388628415431,
+            9.12313910489197,
+            10.430123971744674,
+            12.214481169214316,
+            14.315335031233536,
+            16.872646639326142,
+            20.572248836052587
+          ],
+          "affine_fit": [
+            -0.2622354808055096,
+            0.6779520354297492,
+            1.4490496198740193,
+            2.1282425390463198,
+            2.979709521669604,
+            3.788196539226,
+            4.53000294840491,
+            5.298330617718058,
+            6.266689339255425,
+            7.135043004353973,
+            8.027721863868885,
+            8.98803596914676,
+            9.952350787781494,
+            11.040194852713864,
+            12.70593215419244,
+            14.514712989426519,
+            16.532833040922718
+          ],
+          "scale": 5.409289477538673
+        }
+      },
+      {
+        "feature": "c",
+        "verdict": "nonlinear_monotone",
+        "tolerance": 0.1,
+        "noise_floor": 0.04348912565730503,
+        "nonlinearity_gap": {
+          "value": 0.26631033376014857,
+          "lower": 0.20941103518584994,
+          "upper": 0.34580954508460715,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_slope": {
+          "value": 4.125331810840754,
+          "lower": 3.716193165261008,
+          "upper": 4.482489259917754,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "affine_intercept": {
+          "value": -5.1487159071780315,
+          "lower": -6.222055480273932,
+          "upper": -4.056115421244383,
+          "method": "percentile bootstrap",
+          "n_resamples": 300
+        },
+        "quantile_curve": {
+          "p": [
+            0.1,
+            0.15000000000000002,
+            0.2,
+            0.25,
+            0.30000000000000004,
+            0.35,
+            0.4,
+            0.45000000000000007,
+            0.5,
+            0.55,
+            0.6,
+            0.65,
+            0.7000000000000001,
+            0.75,
+            0.8,
+            0.85,
+            0.9
+          ],
+          "source": [
+            1.1497663292493947,
+            1.3763155838454553,
+            1.5814476427062885,
+            1.7573822297029644,
+            1.8975776182567268,
+            2.0525795505792543,
+            2.2504205282696423,
+            2.4789709745697412,
+            2.7012474304153704,
+            2.926352362266903,
+            3.139681220494972,
+            3.403238863851822,
+            3.6412827038262665,
+            3.916733575033348,
+            4.255224814886682,
+            4.739403597723284,
+            5.356820298681558
+          ],
+          "target": [
+            1.4650168245320605,
+            2.0261577514641265,
+            2.514843461610587,
+            2.9957398516010634,
+            3.513041464293843,
+            3.9702737089374844,
+            4.6346577863031895,
+            5.163220296967269,
+            5.994826046466342,
+            6.789222643062702,
+            7.850882492981744,
+            9.07058294919612,
+            10.645823657736223,
+            12.229805393480678,
+            14.051450410064566,
+            17.10836080321462,
+            20.702920756891512
+          ],
+          "affine_fit": [
+            -0.40554829409189974,
+            0.5290425526154898,
+            1.3752803604573431,
+            2.10106890882186,
+            2.6794214049558756,
+            3.3188558071077843,
+            4.1350154858617785,
+            5.077861912365428,
+            5.994826046466342,
+            6.9234585826106105,
+            7.8035109076291995,
+            8.890773637759436,
+            9.872783463180696,
+            11.009109704495069,
+            12.405498383952954,
+            14.402896518922946,
+            16.949945275930467
+          ],
+          "scale": 5.423935174448799
+        }
+      }
+    ],
+    "tolerance": 0.1
+  },
+  "dependence": {
+    "applicable": true,
+    "copula_cvm_statistic": 0.004917921875,
+    "copula_p": 0.0033222591362126247,
+    "detected": true,
+    "n_perm": 300,
+    "n_grid": 256,
+    "pairs": [
+      {
+        "pair": [
+          "a",
+          "b"
+        ],
+        "spearman_source": 0.31005186402305046,
+        "spearman_target": 0.7635860353715712,
+        "difference": 0.45353417134852075,
+        "p_adjusted": 0.0033222591362126247,
+        "detected": true
+      },
+      {
+        "pair": [
+          "a",
+          "c"
+        ],
+        "spearman_source": 0.3030643053619136,
+        "spearman_target": 0.7661244009441782,
+        "difference": 0.46306009558226463,
+        "p_adjusted": 0.0033222591362126247,
+        "detected": true
+      },
+      {
+        "pair": [
+          "b",
+          "c"
+        ],
+        "spearman_source": 0.30423761788338577,
+        "spearman_target": 0.7696050922689299,
+        "difference": 0.46536747438554416,
+        "p_adjusted": 0.0033222591362126247,
+        "detected": true
+      }
+    ],
+    "spearman_difference_matrix": [
+      [
+        0.0,
+        0.45353417134852075,
+        0.46306009558226463
+      ],
+      [
+        0.45353417134852075,
+        0.0,
+        0.46536747438554416
+      ],
+      [
+        0.4630600955822647,
+        0.46536747438554427,
+        0.0
+      ]
+    ],
+    "features": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  "decomposition": {
+    "applicable": true,
+    "unit": "squared energy distance, features standardized by source robust scale",
+    "verdict": "marginal_dominated",
+    "total_p": 0.0033222591362126247,
+    "total": {
+      "value": 3.229177712037119,
+      "lower": 2.790867427523367,
+      "upper": 3.8263832906532196,
+      "method": "percentile bootstrap within cross-fit halves",
+      "n_resamples": 300
+    },
+    "marginal": {
+      "value": 3.6921845978467736,
+      "lower": 3.2235664626143463,
+      "upper": 4.329026208661999,
+      "method": "percentile bootstrap within cross-fit halves",
+      "n_resamples": 300
+    },
+    "dependence": {
+      "value": 0.12391397447518426,
+      "lower": 0.10268383496663909,
+      "upper": 0.23730730997581376,
+      "method": "percentile bootstrap within cross-fit halves",
+      "n_resamples": 300
+    },
+    "interaction": {
+      "value": -0.5869208602848388,
+      "lower": -0.8077921055740777,
+      "upper": -0.49509138006308206,
+      "method": "percentile bootstrap within cross-fit halves",
+      "n_resamples": 300
+    },
+    "marginal_share": {
+      "value": 0.9675286232452357,
+      "lower": 0.941676484897265,
+      "upper": 0.9723236709295037,
+      "method": "percentile bootstrap within cross-fit halves",
+      "n_resamples": 300
+    },
+    "subsampled_to": {
+      "source": 800,
+      "target": 800
+    },
+    "n_perm": 300
+  },
+  "equivalence": {
+    "interval": "conservative",
+    "n_boot": 500,
+    "marginal": {
+      "delta": 0.1,
+      "unit": "source robust SD",
+      "max_wasserstein_estimate": 3.9799955717773634,
+      "upper_bounds_all": {
+        "conservative": 4.324676402394366,
+        "tost": 4.251418449273936,
+        "basic": 4.21986307772049
+      },
+      "smallest_certifiable_delta": 4.324676402394366,
+      "equivalent": false
+    },
+    "dependence": {
+      "applicable": true,
+      "delta": 0.1,
+      "unit": "Spearman",
+      "max_abs_spearman_diff_estimate": 0.46536747438554416,
+      "upper_bounds_all": {
+        "conservative": 0.5224418539519642,
+        "tost": 0.5146833041260642,
+        "basic": 0.4867213700615978
+      },
+      "smallest_certifiable_delta": 0.5224418539519642,
+      "equivalent": false
+    }
+  },
+  "power": {
+    "marginal": {
+      "shift_family": "location shift, in source robust SD",
+      "deltas": [
+        0.02,
+        0.04,
+        0.06,
+        0.08,
+        0.1,
+        0.15,
+        0.2,
+        0.3,
+        0.5
+      ],
+      "target_power": 0.8,
+      "n_reps": 60,
+      "features": [
+        {
+          "feature_index": 0,
+          "power": [
+            0.03333333333333333,
+            0.15,
+            0.2,
+            0.4666666666666667,
+            0.55,
+            0.9666666666666667,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mde_location_shift_sd": 0.13
+        },
+        {
+          "feature_index": 1,
+          "power": [
+            0.03333333333333333,
+            0.1,
+            0.25,
+            0.4666666666666667,
+            0.6833333333333333,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mde_location_shift_sd": 0.11842105263157895
+        },
+        {
+          "feature_index": 2,
+          "power": [
+            0.016666666666666666,
+            0.15,
+            0.4166666666666667,
+            0.5333333333333333,
+            0.8166666666666667,
+            0.9833333333333333,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mde_location_shift_sd": 0.09882352941176471
+        }
+      ]
+    },
+    "dependence": {
+      "applicable": true,
+      "shift_family": "correlation blended toward all-ones",
+      "effect_unit": "mean |dSpearman| over pairs",
+      "effects": [
+        0.03337894289499227,
+        0.06686029792896485,
+        0.1341759516137984,
+        0.20204198506911594,
+        0.3398408395810734
+      ],
+      "power": [
+        0.13333333333333333,
+        0.4666666666666667,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "target_power": 0.8,
+      "n_reps": 30,
+      "n_perm": 99,
+      "mde_mean_abs_dspearman": 0.10893258148198581
+    }
+  },
+  "notes": [],
+  "limitations": [
+    "Diagnostics concern the feature distribution P(X); they cannot establish whether P(Y|X) is stable.",
+    "Compatibility with an affine/monotone quantile map does not identify the process that generated the target.",
+    "'inconclusive' means the data cannot tell 'no shift' from 'small shift'; only 'equivalent_within_tolerance' supports 'negligible'.",
+    "Decomposition shares depend on the chosen distance (energy) and on counterfactual constructions from empirical quantile maps.",
+    "Assumes independent, continuous observations; temporal dependence needs block-based inference (not in v0.1)."
+  ],
+  "profile": {
+    "marginal_difference": "detected",
+    "marginal_form": "nonlinear_monotone_detected",
+    "dependence_difference": "detected",
+    "shift_attribution": "marginal_dominated",
+    "outcome_mechanism": "not_assessable_from_features"
+  }
+}

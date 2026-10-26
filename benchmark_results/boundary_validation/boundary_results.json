@@ -1,0 +1,458 @@
+{
+ "meta": {
+  "n_boot": 500,
+  "n_sim": 499,
+  "scale": 1.0,
+  "note": "last cell re-run separately with identical seeds after the original run was interrupted"
+ },
+ "results": [
+  {
+   "type": "validity",
+   "scenario": "marginal location (single feature, true W = 0.1)",
+   "n": 1000,
+   "reps": 300,
+   "hits": {
+    "conservative": 0,
+    "tost": 0,
+    "boundary": 12
+   },
+   "rates": {
+    "conservative": [
+     0.0,
+     0.0,
+     0.012643429997735661
+    ],
+    "tost": [
+     0.0,
+     0.0,
+     0.012643429997735661
+    ],
+    "boundary": [
+     0.04,
+     0.02302709213793877,
+     0.06860486345997804
+    ]
+   }
+  },
+  {
+   "type": "validity",
+   "scenario": "dependence Gaussian (single pair, true dSpearman = 0.1)",
+   "n": 1000,
+   "reps": 300,
+   "hits": {
+    "conservative": 4,
+    "tost": 14,
+    "boundary": 15
+   },
+   "rates": {
+    "conservative": [
+     0.013333333333333334,
+     0.005196877684679467,
+     0.03377606084644991
+    ],
+    "tost": [
+     0.04666666666666667,
+     0.02799867455083086,
+     0.07679803531378282
+    ],
+    "boundary": [
+     0.05,
+     0.030531367290852585,
+     0.08084771970710952
+    ]
+   }
+  },
+  {
+   "type": "validity",
+   "scenario": "marginal location (single feature, true W = 0.1)",
+   "n": 3000,
+   "reps": 300,
+   "hits": {
+    "conservative": 5,
+    "tost": 12,
+    "boundary": 20
+   },
+   "rates": {
+    "conservative": [
+     0.016666666666666666,
+     0.0071393720427721935,
+     0.038415943621705605
+    ],
+    "tost": [
+     0.04,
+     0.02302709213793877,
+     0.06860486345997804
+    ],
+    "boundary": [
+     0.06666666666666667,
+     0.04356717679698387,
+     0.10072379586772039
+    ]
+   }
+  },
+  {
+   "type": "validity",
+   "scenario": "dependence Gaussian (single pair, true dSpearman = 0.1)",
+   "n": 3000,
+   "reps": 300,
+   "hits": {
+    "conservative": 8,
+    "tost": 10,
+    "boundary": 11
+   },
+   "rates": {
+    "conservative": [
+     0.02666666666666667,
+     0.013572906766976815,
+     0.051729540297546284
+    ],
+    "tost": [
+     0.03333333333333333,
+     0.018204749873650852,
+     0.0602624514575691
+    ],
+    "boundary": [
+     0.03666666666666667,
+     0.02059509146818067,
+     0.06445448699638771
+    ]
+   }
+  },
+  {
+   "type": "validity",
+   "scenario": "marginal SCALE shift (single feature, true W = 0.1)",
+   "n": 1000,
+   "reps": 150,
+   "hits": {
+    "conservative": 0,
+    "tost": 0,
+    "boundary": 1
+   },
+   "rates": {
+    "conservative": [
+     0.0,
+     0.0,
+     0.02497113914571871
+    ],
+    "tost": [
+     0.0,
+     0.0,
+     0.02497113914571871
+    ],
+    "boundary": [
+     0.006666666666666667,
+     0.0011777710231334546,
+     0.036793752933975674
+    ]
+   }
+  },
+  {
+   "type": "validity",
+   "scenario": "dependence t-copula nu=4 (single pair, true dSpearman = 0.1)",
+   "n": 1000,
+   "reps": 150,
+   "hits": {
+    "conservative": 3,
+    "tost": 6,
+    "boundary": 9
+   },
+   "rates": {
+    "conservative": [
+     0.02,
+     0.006824627715648315,
+     0.05714766586424165
+    ],
+    "tost": [
+     0.04,
+     0.018458908886903574,
+     0.08451453912715763
+    ],
+    "boundary": [
+     0.06,
+     0.031883682005327776,
+     0.11009092044290468
+    ]
+   }
+  },
+  {
+   "type": "validity",
+   "scenario": "marginal SCALE shift (single feature, true W = 0.1)",
+   "n": 3000,
+   "reps": 150,
+   "hits": {
+    "conservative": 1,
+    "tost": 3,
+    "boundary": 3
+   },
+   "rates": {
+    "conservative": [
+     0.006666666666666667,
+     0.0011777710231334546,
+     0.036793752933975674
+    ],
+    "tost": [
+     0.02,
+     0.006824627715648315,
+     0.05714766586424165
+    ],
+    "boundary": [
+     0.02,
+     0.006824627715648315,
+     0.05714766586424165
+    ]
+   }
+  },
+  {
+   "type": "validity",
+   "scenario": "dependence t-copula nu=4 (single pair, true dSpearman = 0.1)",
+   "n": 3000,
+   "reps": 150,
+   "hits": {
+    "conservative": 3,
+    "tost": 6,
+    "boundary": 9
+   },
+   "rates": {
+    "conservative": [
+     0.02,
+     0.006824627715648315,
+     0.05714766586424165
+    ],
+    "tost": [
+     0.04,
+     0.018458908886903574,
+     0.08451453912715763
+    ],
+    "boundary": [
+     0.06,
+     0.031883682005327776,
+     0.11009092044290468
+    ]
+   }
+  },
+  {
+   "type": "power",
+   "scenario": "marginal location true W = 0.0",
+   "n": 1000,
+   "reps": 100,
+   "hits": {
+    "conservative": 0,
+    "tost": 1,
+    "boundary": 63
+   },
+   "rates": {
+    "conservative": [
+     0.0,
+     0.0,
+     0.03699480747600191
+    ],
+    "tost": [
+     0.01,
+     0.0017673865655472645,
+     0.0544875247609346
+    ],
+    "boundary": [
+     0.63,
+     0.5322034757513312,
+     0.7181778743049083
+    ]
+   }
+  },
+  {
+   "type": "power",
+   "scenario": "dependence Gaussian true dSpearman = 0.0",
+   "n": 1000,
+   "reps": 100,
+   "hits": {
+    "conservative": 22,
+    "tost": 46,
+    "boundary": 43
+   },
+   "rates": {
+    "conservative": [
+     0.22,
+     0.15001174503655804,
+     0.3107053471500031
+    ],
+    "tost": [
+     0.46,
+     0.36560643853331865,
+     0.5573531460647615
+    ],
+    "boundary": [
+     0.43,
+     0.3373313900052838,
+     0.5278478830413564
+    ]
+   }
+  },
+  {
+   "type": "power",
+   "scenario": "marginal location true W = 0.0",
+   "n": 3000,
+   "reps": 100,
+   "hits": {
+    "conservative": 90,
+    "tost": 94,
+    "boundary": 98
+   },
+   "rates": {
+    "conservative": [
+     0.9,
+     0.8256326956323347,
+     0.9447714583868639
+    ],
+    "tost": [
+     0.94,
+     0.8752303146877748,
+     0.9722142547333433
+    ],
+    "boundary": [
+     0.98,
+     0.9299868370580063,
+     0.9944981477650318
+    ]
+   }
+  },
+  {
+   "type": "power",
+   "scenario": "dependence Gaussian true dSpearman = 0.0",
+   "n": 3000,
+   "reps": 100,
+   "hits": {
+    "conservative": 98,
+    "tost": 99,
+    "boundary": 99
+   },
+   "rates": {
+    "conservative": [
+     0.98,
+     0.9299868370580063,
+     0.9944981477650318
+    ],
+    "tost": [
+     0.99,
+     0.9455124752390653,
+     0.9982326134344526
+    ],
+    "boundary": [
+     0.99,
+     0.9455124752390653,
+     0.9982326134344526
+    ]
+   }
+  },
+  {
+   "type": "power",
+   "scenario": "marginal location true W = 0.05",
+   "n": 1000,
+   "reps": 100,
+   "hits": {
+    "conservative": 0,
+    "tost": 2,
+    "boundary": 39
+   },
+   "rates": {
+    "conservative": [
+     0.0,
+     0.0,
+     0.03699480747600191
+    ],
+    "tost": [
+     0.02,
+     0.005501852234968185,
+     0.07001316294199365
+    ],
+    "boundary": [
+     0.39,
+     0.300167219319702,
+     0.48797163832501844
+    ]
+   }
+  },
+  {
+   "type": "power",
+   "scenario": "dependence Gaussian true dSpearman = 0.05",
+   "n": 1000,
+   "reps": 100,
+   "hits": {
+    "conservative": 10,
+    "tost": 26,
+    "boundary": 28
+   },
+   "rates": {
+    "conservative": [
+     0.1,
+     0.05522854161313613,
+     0.1743673043676654
+    ],
+    "tost": [
+     0.26,
+     0.18404578126986462,
+     0.35371172631861636
+    ],
+    "boundary": [
+     0.28,
+     0.2013955916759837,
+     0.37488212361345724
+    ]
+   }
+  },
+  {
+   "type": "power",
+   "scenario": "marginal location true W = 0.05",
+   "n": 3000,
+   "reps": 100,
+   "hits": {
+    "conservative": 35,
+    "tost": 48,
+    "boundary": 58
+   },
+   "rates": {
+    "conservative": [
+     0.35,
+     0.2636410465347802,
+     0.4474573957080203
+    ],
+    "tost": [
+     0.48,
+     0.38464384320080547,
+     0.5768359490982345
+    ],
+    "boundary": [
+     0.58,
+     0.4820630799889527,
+     0.672017750814887
+    ]
+   }
+  },
+  {
+   "type": "power",
+   "scenario": "dependence Gaussian true dSpearman = 0.05",
+   "n": 3000,
+   "reps": 100,
+   "hits": {
+    "conservative": 57,
+    "tost": 71,
+    "boundary": 70
+   },
+   "rates": {
+    "conservative": [
+     0.57,
+     0.4721521169586435,
+     0.6626686099947162
+    ],
+    "tost": [
+     0.71,
+     0.6146092505999207,
+     0.7898529302601586
+    ],
+    "boundary": [
+     0.7,
+     0.6041496156718804,
+     0.7810524613377188
+    ]
+   }
+  }
+ ]
+}
