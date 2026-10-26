@@ -310,7 +310,13 @@ def diagnose(source, target, alpha=0.05, n_boot=300, n_perm=300, tol=0.1,
              multiplicity="holm", feature_names=None, seed=None,
              delta_marginal=0.1, delta_dependence=0.1, max_n_decomp=800,
              power=False, power_reps=30, equivalence_interval="conservative", n_boot_equivalence=500,
-             paired=False, time_series=False, block_length=None, categorical_features=None):
+             paired=False, time_series=False, block_length=None, categorical_features=None,
+             dependence_n_grid=256):
+    if (isinstance(dependence_n_grid, bool)
+            or not isinstance(dependence_n_grid, (int, np.integer))
+            or dependence_n_grid < 1):
+        raise ValueError("dependence_n_grid must be a positive integer")
+
     rng = np.random.default_rng(seed)
     prep = prepare(
         source, target, feature_names=feature_names,
@@ -343,7 +349,7 @@ def diagnose(source, target, alpha=0.05, n_boot=300, n_perm=300, tol=0.1,
         ),
         dependence=analyze_dependence(
             S, T, names, alpha, n_perm, rng, paired=paired_flag, block_length=block_len,
-            S_cat=S_cat, T_cat=T_cat, cat_names=cat_names
+            S_cat=S_cat, T_cat=T_cat, cat_names=cat_names, n_grid=dependence_n_grid
         ),
         decomposition=analyze_decomposition(S, T, names, alpha, n_boot, n_perm, rng, max_n_decomp),
         equivalence=analyze_equivalence(

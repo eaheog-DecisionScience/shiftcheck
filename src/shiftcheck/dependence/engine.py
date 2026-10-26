@@ -15,7 +15,10 @@ def _ecdf_at(U, grid, chunk=64):
     out = np.empty(len(grid))
     for k in range(0, len(grid), chunk):
         g = grid[k:k + chunk]
-        out[k:k + chunk] = np.all(U[:, None, :] <= g[None, :, :], axis=2).mean(axis=0)
+        inside = np.ones((len(U), len(g)), dtype=bool)
+        for j in range(U.shape[1]):
+            inside &= U[:, j, None] <= g[None, :, j]
+        out[k:k + chunk] = inside.mean(axis=0)
     return out
 
 

@@ -111,6 +111,36 @@ print(report.summary())
 report.to_json("shift_report.json")
 ```
 
+### Performance tuning for larger datasets
+
+The permutation and bootstrap counts trade runtime for Monte Carlo precision.
+For an initial exploration, you can request fewer resamples and a smaller
+subsample for the decomposition:
+
+```python
+report = diagnose(
+    X_source,
+    X_target,
+    n_boot=100,
+    n_perm=99,
+    n_boot_equivalence=100,
+    max_n_decomp=400,
+    dependence_n_grid=128,
+    seed=0,
+)
+```
+
+These settings are an exploratory starting point, not a replacement for a
+precision appropriate to your analysis. Fewer resamples make interval and
+permutation p-value estimates coarser; `max_n_decomp` limits only the sample
+used for shift attribution. Disable optional power simulations unless needed
+(`power=False` is the default). The dependence permutation test still uses the
+full samples, so its runtime grows with both sample size and `n_perm`.
+`dependence_n_grid` controls the number of random evaluation points used for
+its empirical-copula CDF statistic (default `256`); lowering it can reduce
+runtime but makes that numerical approximation coarser. The same grid is used
+for observed and permuted statistics.
+
 ### Google Colab and Jupyter
 
 In a notebook, `DiagnosticReport` renders as a readable HTML report with a
