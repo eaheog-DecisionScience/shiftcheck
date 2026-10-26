@@ -1,4 +1,8 @@
-"""Run: PYTHONPATH=src python examples/quickstart.py"""
+"""Run with `python examples/quickstart.py` from the repository root.
+
+In Colab or Jupyter, run the diagnosis cell and display `report` (or call
+`display(report)`) to see its interactive HTML summary.
+"""
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt

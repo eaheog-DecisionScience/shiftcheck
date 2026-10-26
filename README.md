@@ -81,6 +81,9 @@ pip install "shiftcheck[plots,dev]"
 
 **Optional:** `matplotlib` (for diagnostic plots)
 
+For the scikit-learn monitor, install `pip install "shiftcheck[sklearn]"`.
+For plots and the monitor together, use `pip install "shiftcheck[plots,sklearn]"`.
+
 ---
 
 ##  Quick Start
@@ -107,6 +110,30 @@ print(report.summary())
 # Export detailed diagnostic breakdown to JSON
 report.to_json("shift_report.json")
 ```
+
+### Google Colab and Jupyter
+
+In a notebook, `DiagnosticReport` renders as a readable HTML report with a
+result profile, feature-level effect sizes and intervals, shift attribution,
+interpretation notes, and the complete JSON in expandable details. The HTML
+rendering uses the standard library; it does not add a notebook dependency.
+
+```python
+from IPython.display import display
+
+report = diagnose(X_source, X_target, seed=0)
+display(report)  # Or make `report` the last expression in a notebook cell.
+```
+
+Keep the machine-readable JSON when you need to archive or process every result:
+
+```python
+report.to_json("shift_report.json")
+```
+
+The standalone `examples/quickstart.py` remains a regular Python script: it
+prints a text summary and saves JSON and a diagnostic figure. In Colab, run the
+diagnosis in a cell and display the returned report as above for inline output.
 
 ---
 

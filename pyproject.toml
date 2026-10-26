@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "shiftcheck"
-version = "0.4.0"
+version = "0.4.1"
 description = "Characterize distribution shift: marginal, transformation-compatibility and dependence diagnostics with uncertainty."
 readme = "README.md"
 license = "MIT"

@@ -10,4 +10,4 @@ from shiftcheck.report.report import diagnose, DiagnosticReport
 from shiftcheck.simulate.generator import make_shift_pair
 
 __all__ = ["diagnose", "DiagnosticReport", "make_shift_pair"]
-__version__ = "0.4.0"
+__version__ = "0.4.1"

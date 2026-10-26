@@ -1,4 +1,5 @@
 """Unified report and the `diagnose` entry point. Layer 3 (all engines)."""
+from html import escape
 import json
 from dataclasses import dataclass, field
 import numpy as np
@@ -168,6 +169,126 @@ class DiagnosticReport:
         lines += ["", "Limitations:"] + [f"  - {s}" for s in self.limitations]
         lines += [f"Notes: {n}" for n in self.notes]
         return "\n".join(lines)
+
+    def _repr_html_(self):
+        """Render a readable, self-contained report in Jupyter and Colab."""
+        profile_rows = "".join(
+            f"<tr><th>{escape(name.replace('_', ' ').title())}</th>"
+            f"<td>{escape(str(status).replace('_', ' '))}</td></tr>"
+            for name, status in self.profile().items()
+        )
+
+        marginal_rows = "".join(
+            "<tr>"
+            f"<th>{escape(str(feature['feature']))}</th>"
+            f"<td>{feature['ks_p_adjusted']:.3g}</td>"
+            f"<td>{feature['wasserstein_normalized']['value']:.3f}</td>"
+            f"<td>{feature['wasserstein_normalized']['lower']:.3f}–"
+            f"{feature['wasserstein_normalized']['upper']:.3f}</td>"
+            f"<td>{'Yes' if feature['detected'] else 'No'}</td>"
+            "</tr>"
+            for feature in self.marginals.get("features", [])
+        )
+        sections = [
+            f"<h3>Result profile</h3><table><tbody>{profile_rows}</tbody></table>"
+        ]
+
+        if marginal_rows:
+            sections.append(
+                "<h3>Continuous marginal shifts</h3>"
+                "<table><thead><tr><th>Feature</th><th>KS adjusted p</th>"
+                "<th>Wasserstein / source SD</th><th>95% bootstrap interval</th>"
+                "<th>Detected</th></tr></thead>"
+                f"<tbody>{marginal_rows}</tbody></table>"
+            )
+
+        transform_rows = "".join(
+            "<tr>"
+            f"<th>{escape(str(feature['feature']))}</th>"
+            f"<td>{escape(str(feature['verdict']).replace('_', ' '))}</td>"
+            + (
+                f"<td>{feature['nonlinearity_gap']['value']:.3f} "
+                f"[{feature['nonlinearity_gap']['lower']:.3f}, "
+                f"{feature['nonlinearity_gap']['upper']:.3f}]</td>"
+                if "nonlinearity_gap" in feature else "<td>n/a</td>"
+            )
+            + "</tr>"
+            for feature in self.transform_compatibility.get("features", [])
+        )
+        if transform_rows:
+            sections.append(
+                "<h3>Marginal form</h3>"
+                "<table><thead><tr><th>Feature</th><th>Assessment</th>"
+                f"<th>Nonlinearity gap [interval]</th></tr></thead><tbody>{transform_rows}</tbody></table>"
+            )
+
+        if self.categorical_marginals and self.categorical_marginals.get("applicable"):
+            categorical_rows = "".join(
+                "<tr>"
+                f"<th>{escape(str(feature['feature']))}</th>"
+                f"<td>{feature['chi2_p_adjusted']:.3g}</td>"
+                f"<td>{feature['tvd']['value']:.3f}</td>"
+                f"<td>{feature['tvd']['lower']:.3f}–{feature['tvd']['upper']:.3f}</td>"
+                f"<td>{'Yes' if feature['detected'] else 'No'}</td>"
+                "</tr>"
+                for feature in self.categorical_marginals["features"]
+            )
+            sections.append(
+                "<h3>Categorical marginal shifts</h3>"
+                "<table><thead><tr><th>Feature</th><th>Chi-square adjusted p</th>"
+                "<th>Total variation distance</th><th>Bootstrap interval</th>"
+                f"<th>Detected</th></tr></thead><tbody>{categorical_rows}</tbody></table>"
+            )
+
+        if self.dependence.get("applicable"):
+            sections.append(
+                "<h3>Dependence</h3>"
+                f"<p>Empirical-copula CvM permutation p-value: "
+                f"<strong>{self.dependence['copula_p']:.3g}</strong></p>"
+            )
+
+        decomposition = self.decomposition
+        if decomposition.get("applicable"):
+            contribution_rows = "".join(
+                f"<tr><th>{escape(name.title())}</th>"
+                f"<td>{decomposition[name]['value']:.4f}</td>"
+                f"<td>{decomposition[name]['lower']:.4f}–{decomposition[name]['upper']:.4f}</td></tr>"
+                for name in ("total", "marginal", "dependence", "interaction")
+            )
+            sections.append(
+                "<h3>Shift attribution</h3>"
+                f"<p>Assessment: <strong>{escape(str(decomposition['verdict']).replace('_', ' '))}</strong>"
+                f" · permutation p-value: {decomposition['total_p']:.3g}</p>"
+                "<table><thead><tr><th>Component</th><th>Estimate</th>"
+                f"<th>Bootstrap interval</th></tr></thead><tbody>{contribution_rows}</tbody></table>"
+            )
+
+        details = escape(self.to_json())
+        notes = "".join(f"<li>{escape(str(note))}</li>" for note in self.notes)
+        limitations = "".join(
+            f"<li>{escape(str(limitation))}</li>" for limitation in self.limitations
+        )
+        design = (
+            "paired" if self.paired else
+            f"time series (block length {self.block_length})" if self.time_series else
+            "independent samples"
+        )
+        return (
+            "<div style=\"font-family:system-ui,-apple-system,Segoe UI,sans-serif;"
+            "color:#1f2937;line-height:1.5;max-width:100%;overflow-x:auto\">"
+            "<style>.shiftcheck-report table{border-collapse:collapse;width:100%;margin:.5rem 0 1.25rem}"
+            ".shiftcheck-report th,.shiftcheck-report td{border:1px solid #d1d5db;padding:.45rem .65rem;text-align:left}"
+            ".shiftcheck-report thead{background:#f3f4f6}.shiftcheck-report h3{margin:1.2rem 0 .4rem}"
+            ".shiftcheck-report .meta{color:#4b5563}</style>"
+            "<div class=\"shiftcheck-report\">"
+            "<h2 style=\"margin-bottom:.25rem\">shiftcheck diagnostic report</h2>"
+            f"<p class=\"meta\">Source: n={self.n_source} · Target: n={self.n_target} · "
+            f"Design: {escape(design)} · Significance level α={self.alpha:g}</p>"
+            f"{''.join(sections)}"
+            f"<details><summary>Notes and interpretation limits</summary><ul>{notes}{limitations}</ul></details>"
+            f"<details><summary>Full diagnostic data (JSON)</summary><pre>{details}</pre></details>"
+            "</div></div>"
+        )
 
     def to_dict(self):
         keys = ("alpha", "n_source", "n_target", "features", "marginals", "transform_compatibility",
